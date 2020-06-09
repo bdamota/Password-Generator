@@ -1,29 +1,40 @@
 // Assignment code here
-function runPrompts () {
-  var promptIntro = window.alert('You need to choose the criteria for your password.')
-  var promptLength = window.prompt('Choose a password length between 8 and 128 characters.');
-  var promptCharacterOptions= window.prompt('Choose to include the following characters: "LOWERCASE", "UPPERCASE", "NUMERIC", and/or "SPECIAL CHARACTERS." Must choose least one option.');
+
+var length = Number(prompt("How many characters will your password be? Enter a number between 8 and 128"));
+
+//ask for character type
+var charType = prompt("Enter a character type: special, numeric, uppercase, lowercase.");
+
+//generate password
+function generatePassword() {
+  //evaluate character type
+  var charSet = "";
+  switch (charType) {
+    case "lowercase":
+    case "LOWERCASE":
+    charSet = "abcdefghijklmnopqrstuvwxyz";
+    break;
+    case "uppercase":
+    case "UPPERCASE":
+    charSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    break;
+    case "numeric":
+    case "NUMERIC":
+    charSet = "0123456789";
+    break;
+    case "special":
+    case "SPECIAL":
+    charSet = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+    break;
+  }
+  //return value
+  var retVal = "";
+  for (var i = 0; i < length; i++) {
+    //picks a character within charSet at index of random number
+    retVal += charSet.charAt(Math.floor(Math.random() * charSet.length));
+  }
+  return retVal;
 }
-
-var generatePassword = function() {
-   var characterNumber =  6;
-   var characterType = 'lowercase';
-
-   return [characterNumber, characterType];
-
-}
-
-var randomNumber = function(min, max) {
-  var value = Math.floor(Math.random() * characterNumber);
-
-  return value;
-};
-
-//if lowercase chosen return a random number of letters based on characterType 
-//if uppercase chosen return a random of letters based on characterType
-//if numeric return a random number of letters based on characterType 
-//if special characters return random of special characters based on characterType. 
-//else return combination? 
 
 
 // Get references to the #generate element
@@ -34,15 +45,9 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   
- //something for output of character length 
-  //output random of lowercase, uppercase 
-
   passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", () => {  
-    runPrompts();
-    writePassword();
-});
+generateBtn.addEventListener("click", writePassword());
