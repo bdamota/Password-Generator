@@ -14,7 +14,7 @@ var confirmSpecial;
 
 //Generate Password Function 
 function generatePassword() {
-  var confirmLength = (prompt("How many characters would you like your password to contain? Must be between 8-128 characters."));
+  var confirmLength = (prompt("How many characters would you like your password to contain? Choose between 8-128 characters."));
     if(confirmLength >= 8 && confirmLength <= 128) {
         alert(`Your password will have ${confirmLength} characters.`);
     } else {
@@ -35,7 +35,7 @@ function generatePassword() {
       var confirmUpperCase = confirm("Click OK to confirm if you would like to include 'UPPERCASE' characters.");   
   }
 
-//Assign password characters
+//Assign action to password parameters 
   var passwordCharacters = []
       
   if (confirmSpecial) {
@@ -87,7 +87,7 @@ function writePassword() {
 };
 
 // Listener Event to write password on click of "Generate Password" button
-generateBtn.addEventListener("click", writePassword());
+generateBtn.addEventListener("click", writePassword);
 
 
 
