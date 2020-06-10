@@ -21,19 +21,40 @@ function generatePassword() {
         alert("Password length must be between 8-128 characters. Try again.");
         var confirmLength = (prompt("How many characters would you like your password to contain? Must be between 8-128 characters."));
       }
-// Determine parameters of password 
-  var confirmSpecial = confirm("Click OK to confirm if you would like to include 'SPECIAL' characters.");
-  var confirmNumeric = confirm("Click OK to confirm if you would like to include 'NUMERIC' characters.");    
-  var confirmLowerCase = confirm("Click OK to confirm if you would like to include 'LOWERCASE' characters.");
-  var confirmUpperCase = confirm("Click OK to confirm if you would like to include 'UPPERCASE' characters.");
-// Loop if answer is outside the parameters 
-    while(confirmUpperCase === false && confirmLowerCase === false && confirmSpecial === false && confirmNumeric === false) {
-      alert("You must choose at least one parameter.");
-      var confirmSpecial = confirm("Click OK to confirm if you would like to include 'SPECIAL' characters.");
-      var confirmNumeric = confirm("Click OK to confirm if you would like to include 'NUMERIC' characters.");    
-      var confirmLowerCase = confirm("Click OK to confirm if you would like to include 'LOWERCASE' characters.");
-      var confirmUpperCase = confirm("Click OK to confirm if you would like to include 'UPPERCASE' characters.");   
+// Determine parameters of password
+  var confirmSpecial = prompt("Enter 'YES' to include 'SPECIAL' characters. Enter 'NO' to leave out.");
+  var confirmNumeric = prompt("Enter 'YES' to include 'NUMERIC' characters. Enter 'NO' to leave out.");    
+  var confirmLowerCase = prompt("Enter 'YES' to include 'LOWERCASE' characters. Enter 'NO' to leave out.");
+  var confirmUpperCase = prompt("Enter 'YES' to include 'UPPERCASE' characters. Enter 'NO' to leave out."); 
+
+  if (confirmSpecial === "YES" || confirmSpecial === "yes") {
+    alert("Your password will contain 'SPECIAL' characters.");
+  } else {
+    alert("Your password will not contain 'SPECIAL' characters.");
   }
+  if (confirmNumeric === "YES" || confirmNumeric === "yes")  {
+    alert("Your password will contain 'NUMERIC' characters.");
+  } else {
+    alert("Your password will not contain 'NUMERIC' characters.");
+  }
+  if (confirmLowerCase === "YES" || confirmLowerCase === "yes")  {
+    alert("Your password will contain 'LOWERCASE' characters.");
+  } else {
+    alert("Your password will not contain 'LOWERCASE' characters.");
+  }
+  if (confirmUpperCase === "YES" || confirmUpperCase === "yes")  {
+    alert("Your password will contain 'UPPERCASE' characters.");
+  } else {
+    alert("Your password will not contain 'UPPERCASE' characters.");
+  }
+  //while (confirmUpperCase === "NO" && confirmLowerCase === "NO" && confirmSpecial === 'NO' && confirmNumeric === 'NO') {
+   // alert("You must choose at least one parameter.");
+    //var confirmSpecial = prompt("Enter 'YES' to include 'SPECIAL' characters. Enter 'NO' to leave out.");
+    //var confirmNumeric = prompt("Enter 'YES' to include 'NUMERIC' characters. Enter 'NO' to leave out.");    
+    //var confirmLowerCase = prompt("Enter 'YES' to include 'LOWERCASE' characters. Enter 'NO' to leave out.");
+    //var confirmUpperCase = prompt("Enter 'YES' to include 'UPPERCASE' characters. Enter 'NO' to leave out."); 
+ // }
+
 
 //Assign action to password parameters 
   var passwordCharacters = []
@@ -88,8 +109,4 @@ function writePassword() {
 
 // Listener Event to write password on click of "Generate Password" button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
 
