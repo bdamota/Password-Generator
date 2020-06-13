@@ -13,12 +13,15 @@ var confirmSpecial;
 //Generate Password Function 
 function generatePassword() {
   var confirmLength = (prompt("How many characters would you like your password to contain? Choose between 8-128 characters."));
-    if(confirmLength >= 8 && confirmLength <= 128) {
+    if (confirmLength >= 8 && confirmLength <= 128) {
         alert(`Your password will have ${confirmLength} characters.`);
-    } else {
-        alert("Password length must be between 8-128 characters. Try again.");
-        var confirmLength = (prompt("How many characters would you like your password to contain? Must be between 8-128 characters."));
-      }
+    } 
+    else {
+      alert("Password length must be between 8-128 characters. Try again.");
+      var confirmLength = (prompt("How many characters would you like your password to contain? Choose between 8-128 characters."));
+      return ["Restart and choose correct number of characters."];
+    }
+
 // Determine parameters of password
   var confirmSelection = alert("Choose at least one of the following character types to include: 'SPECIAL', 'NUMERIC', 'LOWERCASE', 'UPPERCASE.'");
   var confirmSpecial = prompt("Enter 'YES' to include 'SPECIAL' characters. Leave blank to exclude.");
@@ -26,7 +29,7 @@ function generatePassword() {
   var confirmLowerCase = prompt("Enter 'YES' to include 'LOWERCASE' characters. Leave blank to exclude.");
   var confirmUpperCase = prompt("Enter 'YES' to include 'UPPERCASE' characters. Leave blank to exclude."); 
 
-  while ( confirmSpecial === "" && confirmNumeric === "" &&  confirmLowerCase === "" && confirmUpperCase === "") {
+  while (confirmSpecial === "" && confirmNumeric === ""  &&  confirmLowerCase === "" && confirmUpperCase === "") {
     alert("You must choose at least one character type.");
       var confirmSpecial = prompt("Enter 'YES' to include 'SPECIAL' characters. Leave blank to exclude.");
       var confirmNumeric = prompt("Enter 'YES' to include 'NUMERIC' characters. Leave blank to exclude.");    
