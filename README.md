@@ -16,6 +16,7 @@ This is a project is designed to generate a random, secure password, after user 
 https://github.com/bdamota/Password-Generator/blob/master/03-javascript-homework-demo.png
 
 ## LINK TO FINAL SCREENSHOT:
+https://github.com/bdamota/Password-Generator/blob/master/Screen%20Shot%202020-06-15%20at%2012.10.43%20AM.png
 
 ## LINK TO DEPLOYED SITE:
 https://bdamota.github.io/Password-Generator/
