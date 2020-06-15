@@ -13,8 +13,7 @@ This is a project is designed to generate a random, secure password, after user 
 * JavaScript
 
 ## FUNCTIONALITY AND APPEARANCE REQUIREMENTS:
-
-
+https://github.com/bdamota/Password-Generator/blob/master/03-javascript-homework-demo.png
 
 ## LINK TO FINAL SCREENSHOT:
 
