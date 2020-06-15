@@ -19,4 +19,4 @@ This is a project is designed to generate a random, secure password, after user 
 ## LINK TO FINAL SCREENSHOT:
 
 ## LINK TO DEPLOYED SITE:
-
+https://bdamota.github.io/Password-Generator/
