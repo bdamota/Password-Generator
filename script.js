@@ -16,6 +16,10 @@ function generatePassword() {
       if (confirmLength >= 8 && confirmLength <= 128) {
           alert(`Your password will have ${confirmLength} characters.`);
       } 
+      else {
+        alert("Password length must be between 8-128 characters. Try again.");
+        generatePassword();
+      }
       while (confirmLength <8 || confirmLength > 128) {
           alert("Password length must be between 8-128 characters. Try again.");
           var confirmLength = (prompt("How many characters would you like your password to contain? Choose between 8-128 characters."));
@@ -43,23 +47,21 @@ function generatePassword() {
 
       if (confirmNumeric === "YES" || confirmNumeric === "yes")  {
         passwordCharacters = passwordCharacters.concat(number);
-      }
-        
+      } 
+
       if (confirmLowerCase === "YES" || confirmLowerCase === "yes") {
         passwordCharacters = passwordCharacters.concat(alphaLower);
       }
-
+      
       if  (confirmUpperCase === "YES" || confirmUpperCase === "yes") {
         passwordCharacters = passwordCharacters.concat(alphaUpper);
       }
 
-        console.log(passwordCharacters);
 // Empty string to be filled based on for loop selecting random characters from the array
 var randomPassword = ""
     
     for (var i = 0; i < confirmLength; i++) {
       randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
-      console.log(randomPassword)
     }
       return randomPassword;
     }
