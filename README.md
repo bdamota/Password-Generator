@@ -8,15 +8,12 @@ After user has successfully answered the given prompts, a random, secure passwor
 * The password is displayed on the page. 
 
 ## BUILT WITH: 
-* HTML 
-* CSS
+* HTML5 
+* CSS3
 * JavaScript
 
-## FUNCTIONALITY AND APPEARANCE REQUIREMENTS:
-https://github.com/bdamota/Password-Generator/blob/master/03-javascript-homework-demo.png
-
-## LINK TO FINAL SCREENSHOT:
-https://github.com/bdamota/Password-Generator/blob/master/Screen%20Shot%202020-06-15%20at%2012.10.43%20AM.png
+## SCREENSHOT:
+![image](https://github.com/bdamota/Password-Generator/blob/master/Screen%20Shot%202020-06-15%20at%2012.10.43%20AM.png)
 
 ## LINK TO DEPLOYED SITE:
 https://bdamota.github.io/Password-Generator/
